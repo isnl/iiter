@@ -1,25 +1,52 @@
 <template>
   <div class="coh_surround">
-      <div class="coh_box">
-          <div class="coh_left">
-              <a href="">艾特儿</a>
-          </div>
-          <div class="coh_right">
-              <ul class="coh_menu">
-                  <li><a href="http://">发布求助</a></li>
-                  <li><a href="http://">实用工具</a></li>
-                  <li><a href="http://">学习教程</a></li>
-                  <li><a href="http://">软件下载</a></li>
-                  <li><a href="http://">积分商城</a></li>
-                  <li><a href="http://">意见反馈</a></li>
-                  <li><a href="http://">百度搜索</a></li>
-              </ul>
-              <ul class="coh_user">
-                  <li><a href="http://">注册</a></li>
-                  <li><a href="http://">登录</a></li>
-              </ul>
-          </div>
+    <div class="coh_box">
+      <div class="coh_left">
+        <a href="">艾特儿</a>
       </div>
+      <div class="coh_right">
+        <ul class="coh_menu">
+          <li>
+            <a href="http://">发布求助</a>
+            <div class="coh_aline"></div>
+          </li>
+          <li>
+            <a href="http://">实用工具</a>
+            <div class="coh_aline"></div>
+          </li>
+          <li>
+            <a href="http://">学习教程</a>
+            <div class="coh_aline"></div>
+          </li>
+          <li>
+            <a href="http://">软件下载</a>
+            <div class="coh_aline"></div>
+          </li>
+          <li>
+            <a href="http://">积分商城</a>
+            <div class="coh_aline"></div>
+          </li>
+          <li>
+            <a href="http://">意见反馈</a>
+            <div class="coh_aline"></div>
+          </li>
+          <li>
+            <a href="http://">so 调百度接口</a>
+            <div class="coh_aline"></div>
+          </li>
+        </ul>
+        <ul class="coh_user">
+          <li>
+            <a href="http://">注册</a>
+            <div class="coh_aline"></div>
+          </li>
+          <li>
+            <a href="http://">登录</a>
+            <div class="coh_aline"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -37,7 +64,7 @@ export default {
 .coh_surround {
   width: 100%;
   height: 50px;
-  background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.8);
   .coh_box {
     width: 1200px;
     margin: 0 auto;
@@ -46,7 +73,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     .coh_left {
-      width: 100px;
+      width: 200px;
       line-height: 50px;
       font-size: 16px;
       color: rgba(255, 255, 255, 0.8);
@@ -56,17 +83,30 @@ export default {
       height: 50px;
       display: flex;
       li {
-        height: 47px;
-        line-height: 47px;
-        border-bottom: 3px solid transparent;
+        height: 50px;
+        line-height: 50px;
         text-align: center;
         transition: all 0.3s;
         a {
+          display: block;
+          width: 100%;
+          height: 48px;
+          line-height: 48px;
           color: rgba(255, 255, 255, 0.8);
           transition: all 0.3s;
         }
+        .coh_aline {
+          width: 0;
+          height: 2px;
+          background: gold;
+          transition: all .3s;
+        }
         &:hover {
           border-color: #e41f2b;
+          background-size: 100% 100%;
+          .coh_aline{
+            width:100%;
+          }
           a {
             color: rgba(255, 255, 255, 0.9);
           }
