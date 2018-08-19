@@ -1,0 +1,31 @@
+body,div,p,ul,li,ol,dl,dt,dd,table,tr,th,td,h1,h2,h3,h4,h5,h6,hr,form,input,img,fieldset{
+	margin:0;
+	padding:0;
+}
+html,body{
+	height:100%;
+}
+/*去除页面滚动条  全局*/
+::-webkit-scrollbar {
+  display:none
+}
+html::-webkit-scrollbar {display:none}
+body{
+	font-family:"微软雅黑",Arial;
+	font-size: 14px;
+	background:#F9F9F9;
+}
+a{
+	text-decoration:none;
+	color:#fff;
+}
+i{
+  font-style:normal;
+}
+ul{
+    list-style:none;
+}
+img{
+  display: block;
+  border:none;
+}
