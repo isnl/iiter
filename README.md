@@ -1,6 +1,6 @@
 # 艾特儿（临时名称） web前端互助社区
 
-> A Vue.js project
+> A Vue.js project 旨在为前端工程师打造一个快速解决问题的友好社区
 
 ## Build Setup
 
@@ -17,12 +17,13 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-# 命名规则
-# 文件夹命名  - 小写
-# vue文件命名  大驼峰
-# 路由的path路径  全部为小写，name和component为大驼峰
-# class命名 以一个vue组件举栗子 例：ArticleContent.vue，则其当前组件外面的最大盒子class名为第一个单词的前两个字母，和后面单词的第一个字母+surround（arc_surround）,盒子里面内容的class命名前缀则以 arc_ 为标准，语义化命名。如有三个单词，例HelpContentTest.vue  则前缀对应为 hect_
-# vue组件的模板 
+## 命名规则
+文件夹命名  - 小写
+vue文件命名  大驼峰
+路由的path路径  全部为小写，name和component为大驼峰
+class命名 以一个vue组件举栗子 例：ArticleContent.vue，则其当前组件外面的最大盒子class名为第一个单词的前两个字母，和后面单词的第一个字母+surround（arc_surround）,盒子里面内容的class命名前缀则以 arc_ 为标准，语义化命名。如有三个单词，例HelpContentTest.vue  则前缀对应为 hect_
+## vue组件的模板 
+··· bash
 <template>
   <div class=""></div>
 </template>
@@ -41,9 +42,12 @@ export default {
 </script>
 <style lang='scss' scoped>
 </style>
+```
 
-# 全局盒子阴影
-# box-shadow:0 0 20px rgba(0,0,0,.2)
+### 全局盒子阴影
+··· bash
+box-shadow:0 0 20px rgba(0,0,0,.2)
+```
 
 # 全局弹窗消息提示 
 
