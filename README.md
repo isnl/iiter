@@ -1,28 +1,29 @@
 # 艾特儿（临时名称） web前端互助社区
 
-> A Vue.js project 旨在为前端工程师打造一个快速解决问题的友好社区
+> A Vue.js project 旨在为前端工程师打造一个快速解决问题的友好社区重点内容
 
-### Build Setup
+### Build Setup(运行)
 
 ``` bash
-# install dependencies
+# install dependencies-安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8080-运行
 npm run dev
 
-# build for production with minification
+# build for production with minification-发布
 npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
 ### 命名规则
-> 文件夹命名  - 小写
-> vue文件命名  大驼峰
-> 路由的path路径  全部为小写，name和component为大驼峰
-> class命名 以一个vue组件举栗子 例：ArticleContent.vue，则其当前组件外面的最大盒子class名为第一个单词的前两个字母，和后面单词的第一个字母+surround（arc_surround）,盒子里面内容的class命名前缀则以 arc_ 为标准，语义化命名。如有三个单词，例HelpContentTest.vue  则前缀对应为 hect_
 
+ 1. 文件夹命名  - 小写
+ 2. vue文件命名  大驼峰
+ 3. 路由的path路径  全部为小写，name和component为大驼峰
+ 4. class命名 以一个vue组件举栗子。例：***ArticleContent.vue***，则其当前组件外面的最大盒子class名为第一个单词的前两个字母，和后面单词的第一个字母+surround（***arc_surround***）,盒子里面内容的class命名前缀则以
+    arc_ 为标准，语义化命名。如有三个单词，例HelpContentTest.vue  则前缀对应为 ***hect_***
 
 ### vue组件的模板 
 ``` bash
@@ -71,7 +72,7 @@ this.$message({
   message: "错误消息",
   type: "error"
 })
-
+```
 ### 使用 ES6 风格编码源码 / 定义变量使用 let / 定义常量使用 const / 使用 export ，import 模块化
 
 
@@ -81,10 +82,10 @@ this.$message({
 
 
 ### 开发人员
-前端-candy 如果二狗同学想参与的话，安排安排!
-后端-oliver
+前端 - candy。如果二狗同学想参与的话，安排安排！
+后端 - oliver 同 学
 ### 项目周期
-2018/08/18 - 2018/12/30   共计134天
+2018/08/18 - 2018/12/30     共计134天
 
 
 
