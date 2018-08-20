@@ -1,12 +1,20 @@
 <template>
   <div class="hec_surround">
     <div class="hec_left">
-      问题求助板块<br> 筛选功能
-      <br> 搜索功能
-      <br> 问题列表
-      <br> 上一页下一页
-      <br>
-
+      <div class="hec_contentTit">
+        <i class="fa fa-handshake-o"></i>
+        <span>问题求助</span>
+      </div>
+      <div class="hec_contentSearch">
+        <input type="text" value="vue中上滑加载问题">
+        <button>搜索一下</button>
+      </div>
+      <div class="hec_contentType">
+        <span>类型：</span>
+        <ul class="hec_contentTypeList">
+          <li v-for="(items,index) in questionInfo" :key="index">{{items.aliasname}}</li>
+        </ul>
+      </div>
     </div>
     <div class="hec_right">
       <div class="hec_userInfo_box">
@@ -110,13 +118,73 @@ export default {
       isLogin: true,
       userInfo: {
         userId: "123",
-        userName: "二狗不二多喜欢你",
+        userName: "二狗不二、",
         userPic:
           "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2278739224,3680254183&fm=27&gp=0.jpg",
         userIntegral: "2423",
         userItMoney: "213",
         userType: "普通用户"
-      }
+      },
+      questionInfo: [
+        {
+          name: "all",
+          aliasname: "全部",
+          data: []
+        },
+        {
+          name: "web",
+          aliasname: "Web前端",
+          data: [
+            {
+              name: "html",
+              aliasname: "Html"
+            },
+            {
+              name: "css",
+              aliasname: "Css"
+            },
+            {
+              name: "javascript",
+              aliasname: "javaScript"
+            },
+            {
+              name: "nodejs",
+              aliasname: "node.js"
+            },
+            {
+              name: "jquery",
+              aliasname: "jQuery"
+            },
+            {
+              name: "vuejs",
+              aliasname: "Vue.js"
+            },
+            {
+              name: "reactjs",
+              aliasname: "React.js"
+            },
+            {
+              name: "angularjs",
+              aliasname: "Angular.js"
+            }
+          ]
+        },
+        {
+          name: "uidesign",
+          aliasname: "UI设计",
+          data: []
+        },
+        {
+          name: "server",
+          aliasname: "服务端",
+          data: []
+        },
+        {
+          name: "other",
+          aliasname: "其他类型",
+          data: []
+        }
+      ]
     };
   },
   components: {},
@@ -132,10 +200,106 @@ export default {
   display: flex;
   justify-content: space-between;
   .hec_left {
-    width: 860px;
-    height: 800px;
+    position: relative;
+    width: 820px;
+    height: 760px;
     background: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    .hec_contentTit {
+      width: 140px;
+      height: 40px;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      position: absolute;
+      left: -20px;
+      top: 20px;
+      border-radius: 0px 20px 0px 20px;
+      text-align: center;
+      line-height: 40px;
+      font-size: 16px;
+      color: #a3a3a3;
+      span {
+        margin-left: 2px;
+      }
+    }
+    .hec_contentSearch {
+      width: 680px;
+      height: 40px;
+      margin-left: 140px;
+      line-height: 40px;
+      font-size: 0;
+      display: flex;
+      justify-content: flex-end;
+      input {
+        width: 300px;
+        height: 32px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        border: 1px solid#ccc;
+        border-right: none;
+        padding: 2px;
+        text-indent: 10px;
+        vertical-align: middle;
+        font-size: 14px;
+        color: #9a9a9a;
+      }
+      button {
+        font-size: 14px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;
+        line-height: 38px;
+        width: 120px;
+        height: 38px;
+        border-radius: 0 5px 5px 0;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+      }
+    }
+    .hec_contentType {
+      width: 100%;
+      height: 50px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        display: block;
+        width: 100px;
+        height: 50px;
+        text-align: right;
+        line-height: 50px;
+        font-size: 16px;
+        color: #9a9a9a;
+      }
+      .hec_contentTypeList {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        li {
+          width: 80px;
+          height: 48px;
+          margin: 0 10px;
+          line-height: 50px;
+          text-align: center;
+          color: #9a9a9a;
+          cursor: pointer;
+          border-bottom: 2px solid transparent;
+          &:hover {
+            color:gold;
+            border-bottom-color: gold;
+          }
+        }
+        .liActive {
+          border-bottom: 2px solid gold;
+        }
+      }
+    }
   }
   .hec_right {
     width: 320px;

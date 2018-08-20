@@ -11,7 +11,7 @@ html,body{
 }
 html::-webkit-scrollbar {display:none}
 body{
-	font-family:"微软雅黑",Arial;
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 	font-size: 14px;
 	background:#F9F9F9;
 }
