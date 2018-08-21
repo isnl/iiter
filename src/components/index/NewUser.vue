@@ -95,19 +95,19 @@ export default {
         },
         {
           ulPic:
-            "http://img0.imgtn.bdimg.com/it/u=3371963148,552251466&fm=27&gp=0.jpg",
+            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3727230533,4096762265&fm=27&gp=0.jpg",
           ulHref: "/",
           ulName: "小姐姐"
         },
         {
           ulPic:
-            "http://img4.imgtn.bdimg.com/it/u=2056325339,1700859875&fm=27&gp=0.jpg",
+            "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3890481574,3826591238&fm=27&gp=0.jpg",
           ulHref: "/",
           ulName: "小哥哥"
         },
         {
           ulPic:
-            "http://img3.imgtn.bdimg.com/it/u=1039107370,2762028827&fm=27&gp=0.jpg",
+            "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=410312134,11805400&fm=27&gp=0.jpg",
           ulHref: "/",
           ulName: "女汉子"
         }

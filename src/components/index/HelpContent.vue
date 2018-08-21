@@ -12,7 +12,13 @@
       <div class="hec_contentType">
         <span>类型：</span>
         <ul class="hec_contentTypeList">
-          <li v-for="(items,index) in questionInfo" :key="index">{{items.aliasname}}</li>
+          <li v-for="(items,index) in questionInfo" :key="index" @click="changeType(items,index)" :class="items === queryQuestion ? 'liActive':''">{{items.aliasname}}</li>
+        </ul>
+      </div>
+      <div class="hec_classification" v-if="queryQuestion.data.length > 0">
+        <span>分类：</span>
+        <ul class="hec_classificationList">
+          <li v-for="(items,index) in queryQuestion.data" :key="index" @click="changeClassification(items,index)">{{items.aliasname}}</li>
         </ul>
       </div>
     </div>
@@ -118,12 +124,17 @@ export default {
       isLogin: true,
       userInfo: {
         userId: "123",
-        userName: "二狗不二、",
+        userName: "二狗有点二、",
         userPic:
           "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2278739224,3680254183&fm=27&gp=0.jpg",
         userIntegral: "2423",
         userItMoney: "213",
         userType: "普通用户"
+      },
+      queryQuestion: {
+        name: "",
+        data: [],
+        aliasname: ""
       },
       questionInfo: [
         {
@@ -188,7 +199,19 @@ export default {
     };
   },
   components: {},
-  methods: {},
+  methods: {
+    /**
+     * @description 改变类型
+     */
+    changeType(items, index) {
+      this.queryQuestion = items;
+      console.log(this.queryQuestion);
+    },
+    /**
+    *@description 改变分类
+     */
+     changeClassification(items,index){}
+  },
   created() {}
 };
 </script>
@@ -262,17 +285,17 @@ export default {
     }
     .hec_contentType {
       width: 100%;
-      height: 50px;
-      margin-top: 10px;
+      height: 40px;
+      margin-top: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       span {
         display: block;
         width: 100px;
-        height: 50px;
+        height: 40px;
         text-align: right;
-        line-height: 50px;
+        line-height: 40px;
         font-size: 16px;
         color: #9a9a9a;
       }
@@ -283,20 +306,63 @@ export default {
         align-items: center;
         li {
           width: 80px;
-          height: 48px;
+          height: 38px;
           margin: 0 10px;
-          line-height: 50px;
+          line-height: 40px;
           text-align: center;
           color: #9a9a9a;
           cursor: pointer;
           border-bottom: 2px solid transparent;
+          transition: all 0.3s;
           &:hover {
-            color:gold;
+            color: gold;
             border-bottom-color: gold;
           }
         }
         .liActive {
+          color: gold;
           border-bottom: 2px solid gold;
+        }
+      }
+    }
+    .hec_classification {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        display: block;
+        width: 100px;
+        height: 40px;
+        text-align: right;
+        line-height: 40px;
+        font-size: 14px;
+        color: #9a9a9a;
+      }
+      .hec_classificationList {
+        padding-left: 10px;
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        li {
+          width: 70px;
+          height: 38px;
+          margin: 0 5px;
+          line-height: 40px;
+          text-align: center;
+          color: #9a9a9a;
+          cursor: pointer;
+          border-bottom: 2px solid transparent;
+          transition: all 0.3s;
+          &:hover {
+            color: #FF004C;
+            border-bottom-color: #FF004C;
+          }
+        }
+        .liActive {
+          border-bottom: 2px solid #FF004C;
         }
       }
     }

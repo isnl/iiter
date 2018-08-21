@@ -90,16 +90,17 @@ export default {
         a {
           display: block;
           width: 100%;
-          height: 48px;
-          line-height: 48px;
-          color: rgba(255, 255, 255, 0.8);
-          transition: all 0.3s;
+          height: 47px;
+          line-height: 47px;
+          color: rgba(255, 255, 255, 0.7);
+          transition: all 0.5s;
         }
         .coh_aline {
           width: 0;
-          height: 2px;
+          margin:0 auto;
+          height: 3px;
           background: gold;
-          transition: all .3s;
+          transition: all .5s;
         }
         &:hover {
           border-color: #e41f2b;
@@ -108,18 +109,18 @@ export default {
             width:100%;
           }
           a {
-            color: rgba(255, 255, 255, 0.9);
+            color: gold;
           }
         }
       }
       .coh_menu {
         flex: 1;
         height: 50px;
-        padding-left: 40px;
+        padding-left: 0px;
         display: flex;
         align-items: center;
         li {
-          width: 80px;
+          width: 100px;
         }
       }
       .coh_user {
