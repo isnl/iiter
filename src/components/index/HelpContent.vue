@@ -12,14 +12,47 @@
       <div class="hec_contentType">
         <span>类型：</span>
         <ul class="hec_contentTypeList">
-          <li v-for="(items,index) in questionInfo" :key="index" @click="changeType(items,index)" :class="items === queryQuestion ? 'liActive':''">{{items.aliasname}}</li>
+          <li v-for="(items,index) in questionInfo" :key="index" @click="changeType(items)" :class="items === queryQuestion.type ? 'liActive':''">{{items.aliasname}}</li>
         </ul>
       </div>
-      <div class="hec_classification" v-if="queryQuestion.data.length > 0">
+      <div class="hec_subBox hec_classification" v-if="queryQuestion.type !== null && queryQuestion.type.name !== 'all'">
         <span>分类：</span>
-        <ul class="hec_classificationList">
-          <li v-for="(items,index) in queryQuestion.data" :key="index" @click="changeClassification(items,index)">{{items.aliasname}}</li>
+        <ul class="hec_subList hec_classificationList">
+          <li v-for="(items,index) in queryQuestion.type.data" :key="index" @click="changeClassification(items)" :class="items === queryQuestion.subType ? 'liActive':''">{{items.aliasname}}</li>
         </ul>
+      </div>
+      <div class="hec_subBox hec_contentStatus">
+        <span>状态：</span>
+        <ul class="hec_subList hec_contentStatusList">
+          <li v-for="(items,index) in queryStatusList" :key="index" @click="changeStatus(items)" :class="items === queryQuestion.status ? 'liActive':''">{{items}}</li>
+        </ul>
+      </div>
+      <div class="hec_subBox hec_consultationType">
+        <span>咨询类型：</span>
+        <ul class="hec_subList hec_hec_consultationTypeList">
+          <li v-for="(items,index) in consultationList" :key="index" @click="changeConsultation(items)" :class="items === queryQuestion.consultation ? 'liActive':''">{{items}}</li>
+        </ul>
+      </div>
+      <div class="hec_content">
+        <div class="hec_contentList" v-for="(item,index) in questionList" :key="index">
+          <div class="hec_contentList_left">
+            <a href=""><img :src="item.pic" alt="">
+              <span></span>
+            </a>
+          </div>
+          <div class="hec_contentList_center">
+
+          </div>
+          <div class="hec_contentLisst_right">
+
+          </div>
+        </div>
+        <div class="hec_contentControlBtn">
+          <input type="text" value="输入页数">
+          <button>跳转</button>
+          <button>上一页</button>
+          <button>下一页</button>
+        </div>
       </div>
     </div>
     <div class="hec_right">
@@ -132,9 +165,10 @@ export default {
         userType: "普通用户"
       },
       queryQuestion: {
-        name: "",
-        data: [],
-        aliasname: ""
+        type: null,
+        subType: null,
+        status: null,
+        consultation: null
       },
       questionInfo: [
         {
@@ -183,7 +217,16 @@ export default {
         {
           name: "uidesign",
           aliasname: "UI设计",
-          data: []
+          data: [
+            {
+              name: "advertisement",
+              aliasname: "广告设计"
+            },
+            {
+              name: "webUI",
+              aliasname: "网页设计"
+            }
+          ]
         },
         {
           name: "server",
@@ -195,6 +238,30 @@ export default {
           aliasname: "其他类型",
           data: []
         }
+      ],
+      queryStatusList: ["全部", "求助中", "已解决"],
+      consultationList: ["全部", "免费咨询", "积分咨询", "收费咨询"],
+      questionList: [
+        {
+          id: "001",
+          uuid: "0528",
+          pic:
+            "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1081097914,2853990963&fm=27&gp=0.jpg",
+          type: "",
+          subType: "javascript",
+          consultationType: "付费",
+          consultationNum: "299",
+          zanNum: "124",
+          readNUm: "999",
+          status: "已解决",
+          helpTit: "vue中路由全局拦截问题",
+          helpCont: "如下图，在vue项目中遇到这样的问题，很难受。。。"
+        },
+        {},
+        {},
+        {},
+        {},
+        {}
       ]
     };
   },
@@ -204,13 +271,27 @@ export default {
      * @description 改变类型
      */
     changeType(items, index) {
-      this.queryQuestion = items;
+      this.queryQuestion.type = items;
       console.log(this.queryQuestion);
     },
     /**
-    *@description 改变分类
+     *@description 改变分类
      */
-     changeClassification(items,index){}
+    changeClassification(items, index) {
+      this.queryQuestion.subType = items;
+    },
+    /**
+     *@description 改变状态
+     */
+    changeStatus(items) {
+      this.queryQuestion.status = items;
+    },
+    /**
+     *@description 改变咨询类型
+     */
+    changeConsultation(items) {
+      this.queryQuestion.consultation = items;
+    }
   },
   created() {}
 };
@@ -219,13 +300,13 @@ export default {
 .hec_surround {
   width: 1200px;
   margin: 20px auto;
-  height: 800px;
+  height: 1000px;
   display: flex;
   justify-content: space-between;
   .hec_left {
     position: relative;
     width: 820px;
-    height: 760px;
+    height: 960px;
     background: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -325,7 +406,7 @@ export default {
         }
       }
     }
-    .hec_classification {
+    .hec_subBox {
       width: 100%;
       height: 40px;
       display: flex;
@@ -340,7 +421,7 @@ export default {
         font-size: 14px;
         color: #9a9a9a;
       }
-      .hec_classificationList {
+      .hec_subList {
         padding-left: 10px;
         flex: 1;
         display: flex;
@@ -357,19 +438,57 @@ export default {
           border-bottom: 2px solid transparent;
           transition: all 0.3s;
           &:hover {
-            color: #FF004C;
-            border-bottom-color: #FF004C;
+            color: gold;
+            border-bottom-color: gold;
           }
         }
         .liActive {
-          border-bottom: 2px solid #FF004C;
+          border-bottom: 2px solid gold;
+        }
+      }
+    }
+    .hec_content {
+      .hec_contentList {
+        width: 100%;
+        height: 100px;
+        margin-top: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .hec_contentList_left {
+          a {
+            position: relative;
+            img {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+            }
+            &:hover{
+              span{
+                display: block;
+              }
+            }
+            span {
+              display: none;
+              width: 60px;
+              height: 60px;
+              position: absolute;
+              border-radius: 50%;
+              left: 0;
+              top: -60px;
+              background: rgba(255, 255, 255, 0.2);
+            }
+          }
         }
       }
     }
   }
   .hec_right {
     width: 320px;
-    height: 800px;
+    height: 1000px;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -377,7 +496,7 @@ export default {
     .hec_userInfo_box {
       position: relative;
       width: 100%;
-      height: 260px;
+      height: 360px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       padding: 20px 20px 10px;
       box-sizing: border-box;
@@ -569,7 +688,7 @@ export default {
     }
     .hec_rankingList {
       width: 100%;
-      height: 520px;
+      height: 620px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
   }
