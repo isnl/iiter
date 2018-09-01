@@ -126,12 +126,12 @@ export default {
   height: 80px;
   margin: 20px auto;
   background: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  box-shadow:0 0 20px rgba(102, 102, 102, 0.2);
   .neu_title {
     width: 140px;
     height: 40px;
     background: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow:0 0 20px rgba(102, 102, 102, 0.4);
     position: absolute;
     left: -20px;
     top: 20px;

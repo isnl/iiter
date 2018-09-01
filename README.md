@@ -49,9 +49,13 @@ export default {
 
 ### 全局盒子阴影
 ``` bash
-box-shadow:0 0 20px rgba(0,0,0,.2)
+box-shadow:0 0 20px rgba(102, 102, 102, 0.1);
 ```
-
+### 全局标题阴影
+``` bash
+box-shadow:0 0 20px rgba(0, 0, 0, 0.4);
+```
+</br>
 ### 全局弹窗消息提示 
 
 

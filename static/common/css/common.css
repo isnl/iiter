@@ -27,5 +27,6 @@ ul{
 }
 img{
   display: block;
-  border:none;
+	border:none;
+	outline: none;
 }

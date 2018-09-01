@@ -2,16 +2,16 @@
   <div class="swiper-container" id="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-              <img src="http://pic-cdn.35pic.com/58pic/18/28/85/17R58PICT2p_1024.jpg">
+              <img src="http://img.zcool.cn/community/01f1d058ddd6c6a801219c77492521.jpg">
           </div>
            <div class="swiper-slide">
-               <img src="http://imgs.aixifan.com/live/1490317749074/1490317749074.jpg">
+               <img src="http://pic.90sjimg.com/back_pic/00/01/88/75/f9d2ca920e1d352e415672d90623ed98.jpg">
           </div>
            <div class="swiper-slide">
-               <img src="http://bpic.ooopic.com/16/00/53/16005326-82dcd518dae2a347af5c670d4a8dcf70.jpg">
+               <img src="http://pic.90sjimg.com/back_pic/00/04/27/49/31b80e01ffb0ab3465cef4d40ba53650.jpg">
           </div>
            <div class="swiper-slide">
-               <img src="http://pic35.photophoto.cn/20150614/0009021194815582_b.jpg">
+               <img src="http://img.zcool.cn/community/0149d15a524385a80120c2b0b05e68.png@2o.png">
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -65,7 +65,7 @@ export default {
   height: 300px;
   margin-top: 20px;
   background: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.42);
+  box-shadow:0 0 20px rgba(102, 102, 102, 0.1);
   .swiper-wrapper {
     .swiper-slide {
       width: 100%;
