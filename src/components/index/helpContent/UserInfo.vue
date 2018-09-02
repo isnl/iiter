@@ -1,22 +1,22 @@
 <template>
-  <div class="hec_userInfo_box">
+  <div class="usi_surround">
     <!-- v-if做用户的显示  用户信息（放一些头像，积分等级，艾特币之类的）-->
-    <div class="hec_userInfo_title">
+    <div class="usi_userInfo_title">
       <span>用</span>
       <span>户</span>
       <span>信</span>
       <span>息</span>
     </div>
     <!-- 未登录显示UI -->
-    <div class="hec_loginBox" v-if="!isLogin">
-      <a href="" class="hec_loginPic">
+    <div class="usi_loginBox" v-if="!isLogin">
+      <a href="" class="usi_loginPic">
         <span class="fa fa-user-circle-o"></span>
       </a>
-      <a href="" class="hec_loginBtn">立即登录</a>
-      <div class="hec_loginPrivileges">
+      <a href="" class="usi_loginBtn">立即登录</a>
+      <div class="usi_loginPrivileges">
         <span>登录特权</span>
       </div>
-      <ul class="hec_privilegesList">
+      <ul class="usi_privilegesList">
         <li>
           <img src="../../../../static/index/images/help.png">
           <span>发布求助</span>
@@ -36,18 +36,18 @@
       </ul>
     </div>
     <!-- 登录后显示UI(用户信息) -->
-    <div class="hec_userInfo" v-if="isLogin">
-      <div class="hec_userPicBox">
-        <a href="" class="hec_userPic">
+    <div class="usi_userInfo" v-if="isLogin">
+      <div class="usi_userPicBox">
+        <a href="" class="usi_userPic">
           <img :src="userInfo.userPic">
-          <span class="hec_userPic_surround"></span>
+          <span class="usi_userPic_surround"></span>
         </a>
-        <div class="hec_account">
+        <div class="usi_account">
           <a href="">{{userInfo.userName}}</a>
           <span><img src="../../../../static/index/images/signout.png" title="退出登录"></span>
         </div>
       </div>
-      <ul class="hec_userTextInfo">
+      <ul class="usi_userTextInfo">
         <li>
           <span>
             <img src="../../../../static/index/images/userType.png">
@@ -100,7 +100,7 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
-.hec_userInfo_box {
+.usi_surround {
   position: relative;
   width: 100%;
   height: 360px;
@@ -108,7 +108,7 @@ export default {
   box-shadow: 0 0 20px rgba(102, 102, 102, 0.1);
   padding: 20px 20px 10px;
   box-sizing: border-box;
-  .hec_userInfo_title {
+  .usi_userInfo_title {
     position: absolute;
     right: -20px;
     top: 70px;
@@ -125,12 +125,12 @@ export default {
     font-size: 14px;
     color: #a1a1a1;
   }
-  .hec_loginBox {
+  .usi_loginBox {
     width: 100%;
     height: 100%;
     padding:50px 0;
     box-sizing: border-box;
-    .hec_loginPic {
+    .usi_loginPic {
       display: block;
       width: 100%;
       height: 60px;
@@ -141,7 +141,7 @@ export default {
         color: #ccc;
       }
     }
-    .hec_loginBtn {
+    .usi_loginBtn {
       display: block;
       width: 90%;
       margin: 10px auto;
@@ -153,7 +153,7 @@ export default {
       color: #fff;
       background: linear-gradient(to right, gold, orange);
     }
-    .hec_loginPrivileges {
+    .usi_loginPrivileges {
       position: relative;
       width: 80%;
       margin: 30px auto 20px;
@@ -172,7 +172,7 @@ export default {
         color: #a3a3a3;
       }
     }
-    .hec_privilegesList {
+    .usi_privilegesList {
       width: 90%;
       margin: 0 auto;
       display: flex;
@@ -203,21 +203,21 @@ export default {
       }
     }
   }
-  .hec_userInfo {
+  .usi_userInfo {
     width: 100%;
     height: 100%;
-    .hec_userPicBox {
+    .usi_userPicBox {
       width: 100%;
       height: 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .hec_userPic {
+      .usi_userPic {
         position: relative;
         width: 60px;
         height: 60px;
         padding-left: 40px;
-        &:hover .hec_userPic_surround {
+        &:hover .usi_userPic_surround {
           display: block;
         }
         img {
@@ -225,7 +225,7 @@ export default {
           height: 60px;
           border-radius: 50%;
         }
-        .hec_userPic_surround {
+        .usi_userPic_surround {
           display: none;
           position: absolute;
           left: 40px;
@@ -236,7 +236,7 @@ export default {
           background: rgba(255, 255, 255, 0.3);
         }
       }
-      .hec_account {
+      .usi_account {
         flex: 1;
         padding-left: 20px;
         padding-right: 10px;
@@ -262,7 +262,7 @@ export default {
         }
       }
     }
-    .hec_userTextInfo {
+    .usi_userTextInfo {
       width: 100%;
       margin: 20px auto;
       li {

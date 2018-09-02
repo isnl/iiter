@@ -1,64 +1,64 @@
 <template>
-    <div class="hec_left">
-        <div class="hec_contentTit">
+    <div class="hecl_surround">
+        <div class="hecl_contentTit">
             <i class="fa fa-handshake-o"></i>
             <span>问题求助</span>
         </div>
-        <div class="hec_contentSearch">
+        <div class="hecl_contentSearch">
             <input type="text" value="vue中上滑加载问题">
             <button>搜索一下</button>
         </div>
-        <div class="hec_contentType">
+        <div class="hecl_contentType">
             <span>类型：</span>
-            <ul class="hec_contentTypeList">
+            <ul class="hecl_contentTypeList">
                 <li v-for="(items,index) in questionInfo" :key="index" @click="changeType(items)" :class="items === queryQuestion.type ? 'liActive':''">{{items.aliasname}}</li>
             </ul>
         </div>
-        <div class="hec_subBox hec_classification" v-if="queryQuestion.type !== null && queryQuestion.type.name !== 'all'">
+        <div class="hecl_subBox hecl_classification" v-if="queryQuestion.type !== null && queryQuestion.type.name !== 'all'">
             <span>分类：</span>
-            <ul class="hec_subList hec_classificationList">
+            <ul class="hecl_subList hec_classificationList">
                 <li v-for="(items,index) in queryQuestion.type.data" :key="index" @click="changeClassification(items)" :class="items === queryQuestion.subType ? 'liActive':''">{{items.aliasname}}</li>
             </ul>
         </div>
-        <div class="hec_subBox hec_contentStatus">
+        <div class="hecl_subBox hecl_contentStatus">
             <span>状态：</span>
-            <ul class="hec_subList hec_contentStatusList">
+            <ul class="hecl_subList hecl_contentStatusList">
                 <li v-for="(items,index) in queryStatusList" :key="index" @click="changeStatus(items)" :class="items === queryQuestion.status ? 'liActive':''">{{items}}</li>
             </ul>
         </div>
-        <div class="hec_subBox hec_consultationType">
+        <div class="hecl_subBox hecl_consultationType">
             <span>咨询类型：</span>
-            <ul class="hec_subList hec_hec_consultationTypeList">
+            <ul class="hecl_subList hecl_consultationTypeList">
                 <li v-for="(items,index) in consultationList" :key="index" @click="changeConsultation(items)" :class="items === queryQuestion.consultation ? 'liActive':''">{{items}}</li>
             </ul>
         </div>
-        <div class="hec_content">
-            <div class="hec_contentList" v-for="(item,index) in questionList" :key="index">
-                <div class="hec_contentList_left">
+        <div class="hecl_content">
+            <div class="hecl_contentList" v-for="(item,index) in questionList" :key="index">
+                <div class="hecl_contentList_left">
                     <a href=""><img :src="item.pic" alt="">
                         <span></span>
                     </a>
                 </div>
-                <div class="hec_contentList_center">
-                    <div class="hec_cc_top">
+                <div class="hecl_contentList_center">
+                    <div class="hecl_cc_top">
                         <a href="">
                             <h3>{{item.helpTit}}</h3>
                         </a>
                     </div>
-                    <div class="hec_cc_center">
-                        <div class="hec_ccc_userlabel">
-                            <a class="hec_cccu_username" href="">{{item.username}}</a>
-                            <div class="hec_cccu_usergrade">
+                    <div class="hecl_cc_center">
+                        <div class="hecl_ccc_userlabel">
+                            <a class="hecl_cccu_username" href="">{{item.username}}</a>
+                            <div class="hecl_cccu_usergrade">
                                 <img src="../../../../static/index/images/grade.png">
                                 <span>{{item.usergrade}}</span>
                             </div>
                         </div>
-                        <div class="hec_ccc_questionlabel">
-                            <div class="hec_cccq_type">
+                        <div class="hecl_ccc_questionlabel">
+                            <div class="hecl_cccq_type">
                                 <img src=".././../../../static/index/images/label.png">
                                 <span>{{item.subType}}</span>
                             </div>
-                            <div class="hec_cccq_status">
+                            <div class="hecl_cccq_status">
                                 <span>{{item.status}}</span>
                                 <i class="el-icon-success"></i>
                                 <!-- <i class="el-icon-question"></i> -->
@@ -66,38 +66,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hec_cc_bottom">
-                        <div class="hec_ccb_time">{{item.time}}</div>
-                        <div class="hec_ccb_listinfo">
-                            <div class="hec_ccbl_list hec_ccbl_fabulous">
+                    <div class="hecl_cc_bottom">
+                        <div class="hecl_ccb_time">{{item.time}}</div>
+                        <div class="hecl_ccb_listinfo">
+                            <div class="hecl_ccbl_list hec_ccbl_fabulous">
                                 <img src="../../../../static/index/images/fabulousgray.png">
                                 <span>{{item.zanNum}}</span>
                             </div>
-                            <div class="hec_ccbl_list hec_ccbl_visit">
+                            <div class="hecl_ccbl_list hec_ccbl_visit">
                                 <img src="../../../../static/index/images/read.png">
                                 <span>{{item.readNum}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="hec_contentList_right">
-                    <div class="hec_cr_type" v-show="item.consultationType !== '0'">
+                <div class="hecl_contentList_right">
+                    <div class="hecl_cr_type" v-show="item.consultationType !== '0'">
                         赏金：
                         <span>￥{{item.consultationNum}}</span>
                     </div>
-                    <a class="hec_cr_details" href="">查看详情</a>
+                    <a class="hecl_cr_details" href="">查看详情</a>
                 </div>
-                <div class="hec_typeImg">
+                <div class="hecl_typeImg">
                     <!-- 类型角标 -->
                     <img v-if="item.consultationType === '0'||item.consultationType === '1'" src="../../../../static/index/images/frees.png">
                     <img v-if="item.consultationType === '2'" src="../../../../static/index/images/pay.png">
                 </div>
             </div>
         </div>
-        <div class="hec_control">
-            <div class="hec_control_btn">
-                <button class="hec_prev_btn">上一页</button>
-                <button class="hec_next_btn">下一页</button>
+        <div class="hecl_control">
+            <div class="hecl_control_btn">
+                <button class="hecl_prev_btn">上一页</button>
+                <button class="hecl_next_btn">下一页</button>
             </div>
         </div>
     </div>
@@ -328,14 +328,14 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
-.hec_left {
+.hecl_surround {
   position: relative;
   width: 820px;
   height: 960px;
   background: #fff;
   box-shadow: 0 0 20px rgba(102, 102, 102, 0.1);
   padding: 20px;
-  .hec_contentTit {
+  .hecl_contentTit {
     width: 140px;
     height: 40px;
     background: #fff;
@@ -352,7 +352,7 @@ export default {
       margin-left: 2px;
     }
   }
-  .hec_contentSearch {
+  .hecl_contentSearch {
     width: 680px;
     height: 40px;
     margin-left: 140px;
@@ -389,7 +389,7 @@ export default {
       color: #fff;
     }
   }
-  .hec_contentType {
+  .hecl_contentType {
     width: 100%;
     height: 40px;
     margin-top: 10px;
@@ -404,7 +404,7 @@ export default {
       line-height: 40px;
       color: #9a9a9a;
     }
-    .hec_contentTypeList {
+    .hecl_contentTypeList {
       flex: 1;
       display: flex;
       justify-content: flex-start;
@@ -430,7 +430,7 @@ export default {
       }
     }
   }
-  .hec_subBox {
+  .hecl_subBox {
     width: 100%;
     height: 40px;
     display: flex;
@@ -445,7 +445,7 @@ export default {
       font-size: 14px;
       color: #9a9a9a;
     }
-    .hec_subList {
+    .hecl_subList {
       padding-left: 10px;
       flex: 1;
       display: flex;
@@ -471,9 +471,9 @@ export default {
       }
     }
   }
-  .hec_content {
+  .hecl_content {
     padding: 0 10px;
-    .hec_contentList {
+    .hecl_contentList {
       position: relative;
       width: 100%;
       height: 100px;
@@ -490,7 +490,7 @@ export default {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         transform: translateY(-4px);
       }
-      .hec_contentList_left {
+      .hecl_contentList_left {
         a {
           position: relative;
           img {
@@ -515,7 +515,7 @@ export default {
           }
         }
       }
-      .hec_contentList_center {
+      .hecl_contentList_center {
         width: 540px;
         height: 100%;
         padding: 10px 0;
@@ -523,7 +523,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        .hec_cc_top {
+        .hecl_cc_top {
           width: 100%;
           align-self: flex-start;
           a {
@@ -537,18 +537,18 @@ export default {
             }
           }
         }
-        .hec_cc_center {
+        .hecl_cc_center {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          .hec_ccc_userlabel {
+          .hecl_ccc_userlabel {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .hec_cccu_username {
+            .hecl_cccu_username {
               margin-right: 10px;
             }
-            .hec_cccu_usergrade {
+            .hecl_cccu_usergrade {
               margin-left: 10px;
               color: #9a9a9a;
               display: flex;
@@ -562,12 +562,12 @@ export default {
               }
             }
           }
-          .hec_ccc_questionlabel {
+          .hecl_ccc_questionlabel {
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: #9a9a9a;
-            .hec_cccq_type {
+            .hecl_cccq_type {
               display: flex;
               align-items: center;
               margin-right: 10px;
@@ -579,7 +579,7 @@ export default {
                 padding: 0 5px;
               }
             }
-            .hec_cccq_status {
+            .hecl_cccq_status {
               margin-left: 10px;
               .el-icon-success {
                 color: #19be6b;
@@ -593,19 +593,19 @@ export default {
             }
           }
         }
-        .hec_cc_bottom {
+        .hecl_cc_bottom {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          .hec_ccb_time {
+          .hecl_ccb_time {
             color: #7a7a7a;
           }
-          .hec_ccb_listinfo {
+          .hecl_ccb_listinfo {
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: #3a3a3a;
-            .hec_ccbl_list {
+            .hecl_ccbl_list {
               display: flex;
               align-items: center;
               color: #9a9a9a;
@@ -616,16 +616,16 @@ export default {
                 padding: 0 5px;
               }
             }
-            .hec_ccbl_fabulous {
+            .hecl_ccbl_fabulous {
               margin-right: 10px;
             }
-            .hec_ccbl_visit {
+            .hecl_ccbl_visit {
               margin-left: 10px;
             }
           }
         }
       }
-      .hec_contentList_right {
+      .hecl_contentList_right {
         width: 140px;
         height: 100%;
         padding: 10px 0;
@@ -634,7 +634,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         color: #9a9a9a;
-        .hec_cr_type {
+        .hecl_cr_type {
           padding-top: 10px;
           flex: 1;
           span {
@@ -642,7 +642,7 @@ export default {
             color: #f60;
           }
         }
-        .hec_cr_details {
+        .hecl_cr_details {
           width: 120px;
           height: 30px;
           color: #fff;
@@ -657,7 +657,7 @@ export default {
           }
         }
       }
-      .hec_typeImg {
+      .hecl_typeImg {
         position: absolute;
         right: -6px;
         top: -6px;
@@ -668,7 +668,7 @@ export default {
       }
     }
   }
-  .hec_control {
+  .hecl_control {
     width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
@@ -676,7 +676,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    .hec_control_btn {
+    .hecl_control_btn {
       button {
         transition: all 0.1s;
         width: 200px;

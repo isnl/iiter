@@ -1,18 +1,18 @@
 <template>
-  <div class="hec_rankingList">
-    <div class="hec_ral_title">
+  <div class="ral_surround">
+    <div class="ral_title">
       <span>问</span>
       <span>题</span>
       <span>排</span>
       <span>行</span>
     </div>
-    <div class="hec_ral_control">
-      <span @click="changeItem('day')" :class="actived==='day'?'hec_ral_actived':''">日榜</span>
-      <span @click="changeItem('month')" :class="actived==='month'?'hec_ral_actived':''">月榜</span>
-      <span @click="changeItem('all')" :class="actived==='all'?'hec_ral_actived':''">总榜</span>
+    <div class="ral_control">
+      <span @click="changeItem('day')" :class="actived==='day'?'ral_actived':''">日榜</span>
+      <span @click="changeItem('month')" :class="actived==='month'?'ral_actived':''">月榜</span>
+      <span @click="changeItem('all')" :class="actived==='all'?'ral_actived':''">总榜</span>
     </div>
-    <div class="hec_ral_box">
-      <li class="hec_ralb_list" v-for="(item,index) in questionList[actived]" :key="index">
+    <div class="ral_box">
+      <li class="ralb_list" v-for="(item,index) in questionList[actived]" :key="index">
         <span>{{index + 1}}</span>
         <a href="" :title="item.content">{{item.content}}</a>
       </li>
@@ -229,7 +229,7 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
-.hec_rankingList {
+.ral_surround {
   position: relative;
   width: 100%;
   height: 620px;
@@ -238,7 +238,7 @@ export default {
   padding: 20px;
   padding-right: 30px;
   box-sizing: border-box;
-  .hec_ral_title {
+  .ral_title {
     position: absolute;
     right: -20px;
     top: 70px;
@@ -255,7 +255,7 @@ export default {
     font-size: 14px;
     color: #a1a1a1;
   }
-  .hec_ral_control {
+  .ral_control {
     display: flex;
     width: 100%;
     height: 50px;
@@ -278,17 +278,17 @@ export default {
         background: #2b85e4;
       }
     }
-    .hec_ral_actived {
+    .ral_actived {
       color: #fff;
       background: #2b85e4;
     }
   }
-  .hec_ral_box {
+  .ral_box {
     width: 100%;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    .hec_ralb_list {
+    .ralb_list {
       width: 100%;
       height: 35px;
       display: flex;

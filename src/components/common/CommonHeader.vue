@@ -27,11 +27,11 @@
             <div class="coh_aline"></div>
           </li>
           <li>
-            <a href="http://">意见反馈</a>
+            <a href="http://">全网搜索</a>
             <div class="coh_aline"></div>
           </li>
           <li>
-            <a href="http://">so 调百度接口</a>
+            <a href="http://">意见反馈</a>
             <div class="coh_aline"></div>
           </li>
         </ul>

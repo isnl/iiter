@@ -6,7 +6,7 @@
     <help-content></help-content>
     <index-advertisement :ad="ad"></index-advertisement>
     <article-content></article-content>
-    <index-advertisement></index-advertisement>
+    <index-advertisement :ad="ad"></index-advertisement>
     <website-content></website-content>
     <common-footer></common-footer>
     <back-top></back-top>
