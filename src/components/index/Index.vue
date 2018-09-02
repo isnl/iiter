@@ -4,11 +4,12 @@
     <new-user></new-user>
     <Swiper></Swiper>
     <help-content></help-content>
-    <index-advertisement></index-advertisement>
+    <index-advertisement :ad="ad"></index-advertisement>
     <article-content></article-content>
     <index-advertisement></index-advertisement>
     <website-content></website-content>
     <common-footer></common-footer>
+    <back-top></back-top>
   </div>
 </template>
 
@@ -21,9 +22,14 @@ import IndexAdvertisement from "../common/IndexAdvertisement.vue";
 import ArticleContent from "./ArticleContent.vue";
 import WebsiteContent from "./WebsiteContent.vue";
 import CommonFooter from "../common/CommonFooter.vue";
+import BackTop from "../common/BackTop.vue"
 export default {
   data() {
-    return {};
+    return {
+      ad:{
+        pic:"../../../static/advertisement/imgs/ad1.gif"
+      }
+    };
   },
   components: {
     CommonHeader,
@@ -33,7 +39,8 @@ export default {
     IndexAdvertisement,
     ArticleContent,
     WebsiteContent,
-    CommonFooter
+    CommonFooter,
+    BackTop
   },
   methods: {},
   created() {

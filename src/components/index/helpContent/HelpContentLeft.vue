@@ -402,7 +402,6 @@ export default {
       height: 40px;
       text-align: right;
       line-height: 40px;
-      font-size: 16px;
       color: #9a9a9a;
     }
     .hec_contentTypeList {
