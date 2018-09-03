@@ -7,6 +7,7 @@
       <span>行</span>
     </div>
     <div class="ral_control">
+      <!-- 滑过高亮   点击上凸效果 -->
       <span @click="changeItem('day')" :class="actived==='day'?'ral_actived':''">日榜</span>
       <span @click="changeItem('month')" :class="actived==='month'?'ral_actived':''">月榜</span>
       <span @click="changeItem('all')" :class="actived==='all'?'ral_actived':''">总榜</span>

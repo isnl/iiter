@@ -19,7 +19,7 @@ npm run build --report
 ```
 ### 命名规则
 
- 1. 文件夹命名  - 小写
+ 1. 文件夹命名  - 小驼峰
  2. vue文件命名  大驼峰
  3. 路由的path路径  全部为小写，name和component为大驼峰
  4. class命名 以一个vue组件举栗子。例：***ArticleContent.vue***，则其当前组件外面的最大盒子class名为第一个单词的前两个字母，和后面单词的第一个字母+surround（***arc_surround***）,盒子里面内容的class命名前缀则以
@@ -55,7 +55,7 @@ box-shadow:0 0 20px rgba(102, 102, 102, 0.1);
 ``` bash
 box-shadow:0 0 20px rgba(0, 0, 0, 0.4);
 ```
-</br>
+
 ### 全局弹窗消息提示 
 
 
@@ -86,14 +86,33 @@ this.$message({
 
 
 ### 开发人员
-前端 - candy。如果二狗同学想参与的话，安排安排！
+前端 - candy。
 后端 - oliver 同 学
 ### 项目周期
 2018/08/18 - 2018/12/30     共计134天
 
 
+### 待实现功能
 
-
+ 1. 插件/特效库/UI素材库，支持插件上传，插件预览，插件下载，赚取积分（vue，jQuery,css等）
+ 2. 视频教程(为防止盗版视频版权冲突，暂定)
+ 3. 使用工具(在线工具/客户端工具/工具插件/)
+ 4. 问题排行榜tab切换滑过高亮，激活时上凸（轮播效果）
+ 5. 顶部最新用户实现轮播效果
+ 6. 通过QQ获取头像
+  http://q1.qlogo.cn/g?b=qq&nk=945794520&s=100
+  http://q1.qlogo.cn/g?b=qq&k=yJjDKicYbQOuvhb22ckmr9Q&s=100
+  http://q2.qlogo.cn/headimg_dl?dst_uin=493654134&spec=100
+ 7. 每次刷新页面后，问题求助搜索框内容随机改变
+ 8. 网址导航 左侧竖行导航  swiper轮播
+ 9. 登录注册UI1.https://www.zcool.com.cn/work/ZMjczOTkwOTI=.html2.http://www.ui.cn/detail/191264.html
+ 10. 标签云弹幕方式呈现
+ 11. 富文本编辑器 mavonEditor   代码高亮插件 highlightjs
+ 12. 
+ 13. 
+ 14. 
+ 15. 
+ 
 
 
 ### 打卡签到

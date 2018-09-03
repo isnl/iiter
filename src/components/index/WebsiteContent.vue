@@ -4,7 +4,7 @@
       <common-title titleName="网址导航"></common-title>
     </div>
     <div class="wec_right">
-      <common-title titleName="使用工具"></common-title>
+      <common-title titleName="实用工具"></common-title>
     </div>
   </div>
 </template>

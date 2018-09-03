@@ -1,7 +1,7 @@
 <template>
-    <div class="lac_surround">
-        <common-title titleName="标签云"></common-title>
-    </div>
+  <div class="lac_surround">
+    <common-title titleName="标签云"></common-title>
+  </div>
 </template>
 
 <script>
@@ -21,6 +21,8 @@ export default {
 .lac_surround {
   width: 100%;
   height: 200px;
+  padding: 20px;
+  box-sizing: border-box;
   background: #fff;
   box-shadow: 0 0 20px rgba(102, 102, 102, 0.1);
 }
