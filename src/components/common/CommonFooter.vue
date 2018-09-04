@@ -1,13 +1,30 @@
 <template>
-    <div class="cof_surround">
-        <div class="cof_interlink">
-            友情链接
-        </div>
-        <div class="cof_companyinfo">
-            版权信息
-        </div>
-
+  <div class="cof_surround">
+    <div class="cof_interlink">
+      <h3>友情链接：</h3>
+      <ul class="cof_friendLink">
+        <li>
+          <a href="">百度一下</a>
+        </li>
+        <li>
+          <a href="">淘宝一下</a>
+        </li>
+        <li>
+          <a href="http://">京东一下</a>
+        </li>
+        <li>
+          <a href="http://">开心一下</a>
+        </li>
+        <li>
+          <a href="http://">皮一下</a>
+        </li>
+      </ul>
     </div>
+    <div class="cof_companyinfo">
+      版权信息
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -17,9 +34,7 @@ export default {
   },
   components: {},
   methods: {},
-  created() {
-    
-  }
+  created() {}
 };
 </script>
 <style lang='scss' scoped>
@@ -35,11 +50,33 @@ export default {
     width: 1200px;
     margin: 0 auto;
     height: 130px;
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: normal;
+    }
+    .cof_friendLink {
+      width: 1200px;
+      height: 50px;
+      margin: 0 auto;
+      background: #424242;
+      display: flex;
+      align-items: center;
+      li {
+        padding: 0 20px;
+        color: #bebebe;
+        a {
+          color: #bebebe;
+        }
+      }
+    }
   }
   .cof_companyinfo {
     width: 1200px;
     margin: 0 auto;
-    height: 230px;
+    height: 200px;
+    padding-top: 30px;
   }
 }
 </style>

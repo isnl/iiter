@@ -108,7 +108,7 @@ this.$message({
  9. 登录注册UI1.https://www.zcool.com.cn/work/ZMjczOTkwOTI=.html2.http://www.ui.cn/detail/191264.html
  10. 标签云弹幕方式呈现
  11. 富文本编辑器 mavonEditor   代码高亮插件 highlightjs
- 12. 
+ 12. 登录页加弹幕
  13. 
  14. 
  15. 
@@ -139,5 +139,8 @@ this.$message({
 
 #### 2018/09/03 周一
 > 二狗同学  主仓库修改文件呀呀呀啊哈哈哈
+
+#### 2018/09/04 周二
+> 登录注册页面
 
 

@@ -37,11 +37,11 @@
         </ul>
         <ul class="coh_user">
           <li>
-            <a href="http://">注册</a>
+            <a href="/login">注册</a>
             <div class="coh_aline"></div>
           </li>
           <li>
-            <a href="http://">登录</a>
+            <a href="/login">登录</a>
             <div class="coh_aline"></div>
           </li>
         </ul>
