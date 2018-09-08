@@ -105,11 +105,11 @@ this.$message({
   http://q2.qlogo.cn/headimg_dl?dst_uin=493654134&spec=100
  7. 每次刷新页面后，问题求助搜索框内容随机改变
  8. 网址导航 左侧竖行导航  swiper轮播
- 9. 登录注册UI1.https://www.zcool.com.cn/work/ZMjczOTkwOTI=.html2.http://www.ui.cn/detail/191264.html
+ 9. 登录注册UI1.https://www.zcool.com.cn/work/ZMjczOTkwOTI=.html2.http://www.ui.cn/detail/191264.html √
  10. 标签云弹幕方式呈现
  11. 富文本编辑器 mavonEditor   代码高亮插件 highlightjs
  12. 登录页加弹幕
- 13. 
+ 13. 网站顶部再加一栏，logo和搜索
  14. 
  15. 
  
@@ -142,5 +142,8 @@ this.$message({
 
 #### 2018/09/04 周二
 > 登录注册页面
+
+#### 2018/09/05 周三
+> 完善登录注册页面
 
 

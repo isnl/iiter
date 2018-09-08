@@ -74,6 +74,8 @@ export default {
     align-items: center;
     .coh_left {
       width: 200px;
+      padding-left: 10px;
+      box-sizing: border-box;
       line-height: 50px;
       font-size: 16px;
       color: rgba(255, 255, 255, 0.8);
@@ -97,16 +99,16 @@ export default {
         }
         .coh_aline {
           width: 0;
-          margin:0 auto;
+          margin: 0 auto;
           height: 3px;
           background: gold;
-          transition: all .5s;
+          transition: all 0.5s;
         }
         &:hover {
           border-color: #e41f2b;
           background-size: 100% 100%;
-          .coh_aline{
-            width:100%;
+          .coh_aline {
+            width: 100%;
           }
           a {
             color: gold;
