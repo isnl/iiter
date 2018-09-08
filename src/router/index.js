@@ -4,6 +4,7 @@ import Test from "@/components/Test"
 import Index from "@/components/index/Index.vue";
 import Login from "@/components/login/Login.vue"
 
+
 Vue.use(Router)
 
 export default new Router({
@@ -16,7 +17,7 @@ export default new Router({
     },
     {
       path:'/login',
-      name:"Login",
+      name:"NewLogin",
       component:Login
     }
   ]

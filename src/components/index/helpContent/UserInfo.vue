@@ -12,7 +12,7 @@
       <a href="" class="usi_loginPic">
         <span class="fa fa-user-circle-o"></span>
       </a>
-      <a href="" class="usi_loginBtn">立即登录</a>
+      <a href="/login" class="usi_loginBtn">立即登录</a>
       <div class="usi_loginPrivileges">
         <span>登录特权</span>
       </div>
